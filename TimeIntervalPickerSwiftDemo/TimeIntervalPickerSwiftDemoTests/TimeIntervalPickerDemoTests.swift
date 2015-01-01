@@ -24,5 +24,7 @@ import UIKit
 import XCTest
 
 class TimeIntervalPickerSwiftDemoTests: XCTestCase {
-       
+    
+    func testDummy() {
+    }
 }
