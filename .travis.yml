@@ -1,3 +1,4 @@
 language: objective-c
-xcode_project: TimeIntervalPickerSwiftDemo/TimeIntervalPickerSwiftDemo.xcodeproj
-xcode_scheme: TimeIntervalPickerSwiftDemo
+xcode_project: TimeIntervalPicker/TimeIntervalPicker.xcodeproj
+xcode_scheme: TimeIntervalPicker
+xcode_sdk: iphonesimulator8.0
