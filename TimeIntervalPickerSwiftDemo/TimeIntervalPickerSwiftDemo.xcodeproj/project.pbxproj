@@ -85,8 +85,7 @@
 				2D4067D41A3DA70C00D489C7 /* Main.storyboard */,
 				2D4067CE1A3DA70B00D489C7 /* Supporting Files */,
 			);
-			name = TimeIntervalPickerSwiftDemo;
-			path = TimeIntervalPickerDemo;
+			path = TimeIntervalPickerSwiftDemo;
 			sourceTree = "<group>";
 		};
 		2D4067CE1A3DA70B00D489C7 /* Supporting Files */ = {
@@ -103,8 +102,7 @@
 				2D4067E61A3DA70C00D489C7 /* TimeIntervalPickerDemoTests.swift */,
 				2D4067E41A3DA70C00D489C7 /* Supporting Files */,
 			);
-			name = TimeIntervalPickerSwiftDemoTests;
-			path = TimeIntervalPickerDemoTests;
+			path = TimeIntervalPickerSwiftDemoTests;
 			sourceTree = "<group>";
 		};
 		2D4067E41A3DA70C00D489C7 /* Supporting Files */ = {
@@ -333,7 +331,7 @@
 					"$(inherited)",
 					"/Users/dawiddr/Documents/Workspace/time-interval-picker/TimeIntervalPicker/build/Debug-iphoneos",
 				);
-				INFOPLIST_FILE = TimeIntervalPickerDemo/Info.plist;
+				INFOPLIST_FILE = TimeIntervalPickerSwiftDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = TimeIntervalPickerSwiftDemo;
@@ -348,7 +346,7 @@
 					"$(inherited)",
 					"/Users/dawiddr/Documents/Workspace/time-interval-picker/TimeIntervalPicker/build/Debug-iphoneos",
 				);
-				INFOPLIST_FILE = TimeIntervalPickerDemo/Info.plist;
+				INFOPLIST_FILE = TimeIntervalPickerSwiftDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = TimeIntervalPickerSwiftDemo;
@@ -368,7 +366,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = TimeIntervalPickerDemoTests/Info.plist;
+				INFOPLIST_FILE = TimeIntervalPickerSwiftDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = TimeIntervalPickerSwiftDemoTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TimeIntervalPickerDemo.app/TimeIntervalPickerDemo";
@@ -383,7 +381,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = TimeIntervalPickerDemoTests/Info.plist;
+				INFOPLIST_FILE = TimeIntervalPickerSwiftDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = TimeIntervalPickerSwiftDemoTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TimeIntervalPickerDemo.app/TimeIntervalPickerDemo";

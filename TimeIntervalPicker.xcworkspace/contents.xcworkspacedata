@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:TimeIntervalPickerDemo/TimeIntervalPickerSwiftDemo.xcodeproj">
+      location = "group:TimeIntervalPickerSwiftDemo/TimeIntervalPickerSwiftDemo.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:TimeIntervalPicker/TimeIntervalPicker.xcodeproj">
