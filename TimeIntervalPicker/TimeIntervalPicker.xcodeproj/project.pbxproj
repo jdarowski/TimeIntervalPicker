@@ -10,6 +10,7 @@
 		2D4067AC1A3DA6EA00D489C7 /* TimeIntervalPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D4067AB1A3DA6EA00D489C7 /* TimeIntervalPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2D4067B21A3DA6EA00D489C7 /* TimeIntervalPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D4067A61A3DA6EA00D489C7 /* TimeIntervalPicker.framework */; };
 		2D4067B91A3DA6EA00D489C7 /* TimeIntervalPickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4067B81A3DA6EA00D489C7 /* TimeIntervalPickerTests.swift */; };
+		2D44784A1A55C59F00CFE48C /* TimeIntervalPicker.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2D4067A61A3DA6EA00D489C7 /* TimeIntervalPicker.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2DA4F3F01A558B1B0021A64C /* TimeIntervalPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4F3EF1A558B1B0021A64C /* TimeIntervalPicker.swift */; };
 /* End PBXBuildFile section */
 
@@ -22,6 +23,19 @@
 			remoteInfo = TimeIntervalPicker;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2D4478491A55C59500CFE48C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2D44784A1A55C59F00CFE48C /* TimeIntervalPicker.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2D4067A61A3DA6EA00D489C7 /* TimeIntervalPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TimeIntervalPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +158,7 @@
 				2D4067AD1A3DA6EA00D489C7 /* Sources */,
 				2D4067AE1A3DA6EA00D489C7 /* Frameworks */,
 				2D4067AF1A3DA6EA00D489C7 /* Resources */,
+				2D4478491A55C59500CFE48C /* CopyFiles */,
 			);
 			buildRules = (
 			);
