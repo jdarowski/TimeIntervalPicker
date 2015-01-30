@@ -1,0 +1,11 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'TimeIntervalPicker', :exclusive => true do
+  pod "TimeIntervalPicker", :path => "../"
+end
+
+target 'Tests', :exclusive => true do
+  pod "TimeIntervalPicker", :path => "../"
+
+  pod 'FBSnapshotTestCase'
+end
