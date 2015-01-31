@@ -12,6 +12,6 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: e2914fbaabccea1dcc773d6a16b1c24540642488
-  TimeIntervalPicker: 44efe3292ace20e77dc51ec354f25026ceebac79
+  TimeIntervalPicker: 10c751f24d1d85460e481c7bd13beb6edd6cfaa7
 
 COCOAPODS: 0.36.0.beta.2

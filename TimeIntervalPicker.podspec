@@ -1,38 +1,18 @@
-#
-# Be sure to run `pod lib lint TimeIntervalPicker.podspec' to ensure this is a
-# valid spec and remove all comments before submitting the spec.
-#
-# Any lines starting with a # are optional, but encouraged
-#
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = "TimeIntervalPicker"
   s.version          = "0.1.0"
-  s.summary          = "A short description of TimeIntervalPicker."
+  s.summary          = "An iOS picker view resembling look & feel of UIDatePicker in CountDownTimer mode, implemented in Swift"
   s.description      = <<-DESC
-                       An optional longer description of TimeIntervalPicker
+					   UIDatePicker in CountDownTimer mode is not customizable. Furthermore, as it is intended to be used for countdown timers, it doesn't allow to select the value of 0.
 
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
+					   DPTimeIntervalPicker closely resembles its look & fell, while providing customization options for font faces and sizes. It also doesn't impose any limitations on the values, allowing anything from zero to 23 hours 59 minutes to be selected.
                        DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/TimeIntervalPicker"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.homepage         = "https://github.com/dawiddr/TimeIntervalPicker"
   s.license          = 'MIT'
   s.author           = { "Dawid Drechny" => "dawid.drechny@gmail.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/TimeIntervalPicker.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
-  s.platform     = :ios, '7.0'
+  s.source           = { :git => "https://github.com/dawiddr/TimeIntervalPicker.git", :tag => s.version.to_s }
+  s.platform     = :ios, '8.0'
   s.requires_arc = true
-
-  s.source_files = 'Pod/Classes'
-  s.resource_bundles = {
-    'TimeIntervalPicker' => ['Pod/Assets/*.png']
-  }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.source_files = 'Pod/Classes/*'
+  s.frameworks = 'UIKit'
 end

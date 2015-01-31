@@ -1,0 +1,6 @@
+framework module Pods_TimeIntervalPicker {
+  umbrella header "Pods-TimeIntervalPicker-umbrella.h"
+
+  export *
+  module * { export * }
+}
