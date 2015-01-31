@@ -1,6 +1,9 @@
 import UIKit
 
-private let secondsInMinute = 3600.0
+private let secondsInMinute = 60
+private let minutesInHour = 60
+private let secondsInHour = minutesInHour * secondsInMinute
+private let hoursInDay = 24
 
 internal class DigitsLabel: UIView {
     internal var text: String = "" { didSet { label.text = text } }
@@ -34,15 +37,15 @@ public class TimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerView
     /// Value indicated by the picker in seconds
     public var timeInterval: NSTimeInterval {
         get {
-            let secondsFromHoursComponent = Double(pickerView.selectedRowInComponent(Components.Hour.rawValue)) * secondsInMinute
-            let secondsFromMinutesComponent = Double(pickerView.selectedRowInComponent(Components.Minute.rawValue) % 60 * 60)
-            return secondsFromHoursComponent + secondsFromMinutesComponent
+            let secondsFromHoursComponent = pickerView.selectedRowInComponent(Components.Hour.rawValue) * secondsInHour
+            let secondsFromMinutesComponent = pickerView.selectedRowInComponent(Components.Minute.rawValue) % minutesInHour * secondsInMinute
+            return NSTimeInterval(secondsFromHoursComponent + secondsFromMinutesComponent)
         }
         set(value) {
-            let hours = Int(value / secondsInMinute)
-            let minutes = Int(value % secondsInMinute)
+            let hours = Int(value) / secondsInHour
+            let minutes = (Int(value) - hours * secondsInHour) / secondsInMinute
             
-            pickerView.selectRow(hours, inComponent: Components.Hour.rawValue, animated: false)
+            pickerView.selectRow(hours % hoursInDay, inComponent: Components.Hour.rawValue, animated: false)
             pickerView.selectRow(minuteRowsCount / 2 + minutes, inComponent: Components.Minute.rawValue, animated: false)
         }
     }
@@ -72,7 +75,7 @@ public class TimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerView
         case Minute = 1
     }
     
-    private let minuteRowsCount = 60 * 1000
+    private let minuteRowsCount = minutesInHour * 1000
     private var pickerView: UIPickerView!
     private var hoursFloatingLabel: UILabel!
     private var minutesFloatingLabel: UILabel!
@@ -204,7 +207,7 @@ public class TimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerView
         assert(pickerView == self.pickerView)
         switch Components(rawValue: component)! {
         case Components.Hour:
-            return 24
+            return hoursInDay
         case Components.Minute:
             return minuteRowsCount // a high number to create an illusion of an infinitly-looped selector
         }
@@ -235,7 +238,7 @@ public class TimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerView
         case Components.Hour:
             return row.description
         case Components.Minute:
-            return (row % 60).description
+            return (row % minutesInHour).description
         }
     }
 }
