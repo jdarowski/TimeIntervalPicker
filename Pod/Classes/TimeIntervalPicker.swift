@@ -227,7 +227,7 @@ public class TimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerView
     public func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView!) -> UIView {
         var x = DigitsLabel(width: componentWidth, height: digitsLabelSize.height, labelWidth: digitsLabelSize.width, font: digitsLabelFont)
         
-        var label: DigitsLabel = view is DigitsLabel ? view as DigitsLabel : DigitsLabel(width: componentWidth, height: digitsLabelSize.height, labelWidth: digitsLabelSize.width, font: digitsLabelFont)
+        var label: DigitsLabel = view is DigitsLabel ? view as! DigitsLabel : DigitsLabel(width: componentWidth, height: digitsLabelSize.height, labelWidth: digitsLabelSize.width, font: digitsLabelFont)
         label.text = self.pickerView(pickerView, titleForRow: row, forComponent: component)
         return label
     }
