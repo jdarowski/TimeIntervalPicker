@@ -159,7 +159,7 @@ public class TimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerView
     private func createFloatingLabels() {
         func createLabel(text: String) -> UILabel {
             var label = UILabel()
-            label.font = minHoursFloatingLabelFont
+            label.font = self.minHoursFloatingLabelFont
             label.text = text
             label.setTranslatesAutoresizingMaskIntoConstraints(false)
             label.userInteractionEnabled = false
@@ -177,7 +177,7 @@ public class TimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerView
     
     override public func layoutSubviews() {
         func alignToBaselineOfSelectedRow(label: UILabel) {
-            let rowBaseline = pickerView.frame.origin.y + (pickerView.frame.height / 2) - digitsLabelFont.descender
+            let rowBaseline = self.pickerView.frame.origin.y + (self.pickerView.frame.height / 2) - self.digitsLabelFont.descender
             label.frame.origin.y = rowBaseline - label.frame.size.height - label.font.descender
         }
         
