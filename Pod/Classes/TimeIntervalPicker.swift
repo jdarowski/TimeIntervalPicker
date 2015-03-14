@@ -82,10 +82,6 @@ public class TimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerView
     
     // MARK: Initializers
     
-    override init() {
-        super.init()
-    }
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         createPickerView()
