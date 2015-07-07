@@ -35,7 +35,7 @@ public class TimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerView
     // MARK: Value access
     
     /// Value indicated by the picker in seconds
-    public var timeInterval: NSTimeInterval {
+    public var countDownDuration: NSTimeInterval {
         get {
             let secondsFromHoursComponent = pickerView.selectedRowInComponent(Components.Hour.rawValue) * secondsInHour
             let secondsFromMinutesComponent = pickerView.selectedRowInComponent(Components.Minute.rawValue) % minutesInHour * secondsInMinute
@@ -48,6 +48,27 @@ public class TimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerView
             pickerView.selectRow(hours % hoursInDay, inComponent: Components.Hour.rawValue, animated: false)
             pickerView.selectRow(minuteRowsCount / 2 + minutes, inComponent: Components.Minute.rawValue, animated: false)
         }
+    }
+    
+    public var date: NSDate {
+        get {
+            let components = NSDateComponents()
+            components.second = Int(countDownDuration)
+            return NSCalendar.currentCalendar().dateFromComponents(components)!
+        }
+        set(newDate) {
+            let components = NSCalendar.currentCalendar().components(.CalendarUnitHour | .CalendarUnitMinute | .CalendarUnitSecond, fromDate: newDate)
+            countDownDuration = NSTimeInterval(components.hour * 3600 + components.minute * 60 + components.second)
+        }
+    }
+    
+    public func setDate(newDate: NSDate, animated: Bool) {
+        // TODO: implement animation
+        date = newDate
+    }
+    
+    public func setDatePickerMode(mode: UIDatePickerMode) {
+        assert(mode == .CountDownTimer)
     }
     
     // MARK: Layout and geometry
