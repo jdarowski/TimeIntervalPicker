@@ -84,8 +84,10 @@ public class TimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerView
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         createPickerView()
         createFloatingLabels()
+        autoresizingMask = .FlexibleHeight | .FlexibleWidth
         
         // Creates an illusion of an infinitly-looped minute: selector
         let middleMinutesRow = minuteRowsCount / 2
@@ -94,8 +96,10 @@ public class TimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerView
     
     required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
         createPickerView()
         createFloatingLabels()
+        autoresizingMask = .FlexibleHeight | .FlexibleWidth
         
         // Creates an illusion of an infinitly-looped minute: selector
         let middleMinutesRow = minuteRowsCount / 2
