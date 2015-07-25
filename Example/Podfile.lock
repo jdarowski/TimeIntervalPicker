@@ -8,10 +8,10 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   TimeIntervalPicker:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  FBSnapshotTestCase: e2914fbaabccea1dcc773d6a16b1c24540642488
-  TimeIntervalPicker: 10c751f24d1d85460e481c7bd13beb6edd6cfaa7
+  FBSnapshotTestCase: 26f32d8fa9eb30e9f09712ecfb097808bc79b898
+  TimeIntervalPicker: 9d1874124e9c6b10869dadf77558ae9b4c927f97
 
-COCOAPODS: 0.36.0.beta.2
+COCOAPODS: 0.38.1

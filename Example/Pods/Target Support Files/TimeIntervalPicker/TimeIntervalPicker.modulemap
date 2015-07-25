@@ -1,5 +1,5 @@
 framework module TimeIntervalPicker {
-  umbrella header "Pods-Tests-TimeIntervalPicker-umbrella.h"
+  umbrella header "TimeIntervalPicker-umbrella.h"
 
   export *
   module * { export * }
