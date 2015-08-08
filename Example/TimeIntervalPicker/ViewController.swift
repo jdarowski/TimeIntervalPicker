@@ -14,7 +14,7 @@ internal class ViewController: UIViewController {
     }
     
     internal func pickerValueChanged() {
-        valueLabel.text = formatter.stringFromTimeInterval(picker.timeInterval)
+        valueLabel.text = formatter.stringFromTimeInterval(picker.countDownDuration)
     }
 }
 

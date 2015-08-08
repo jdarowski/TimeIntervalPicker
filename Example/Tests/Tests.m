@@ -16,37 +16,37 @@ const NSInteger KMinutesInHour = 60;
 
 - (void)testThatInitialTimeIntervalIsZero {
     TimeIntervalPicker *picker = [[TimeIntervalPicker alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
-    XCTAssertEqual(0, picker.timeInterval);
+    XCTAssertEqual(0, picker.countDownDuration);
 }
 
 - (void)testThatReturnedTimeIntervalIsSameAsSetWhenMultipleOfMinute {
     TimeIntervalPicker *picker = [[TimeIntervalPicker alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
     
-    picker.timeInterval = 0;
-    XCTAssertEqual(0, picker.timeInterval);
+    picker.countDownDuration = 0;
+    XCTAssertEqual(0, picker.countDownDuration);
     
-    picker.timeInterval = 2 * KSecondsInMinute;
-    XCTAssertEqual(2 * KSecondsInMinute, picker.timeInterval);
+    picker.countDownDuration = 2 * KSecondsInMinute;
+    XCTAssertEqual(2 * KSecondsInMinute, picker.countDownDuration);
     
-    picker.timeInterval = 60 * KSecondsInMinute;
-    XCTAssertEqual(60 * KSecondsInMinute, picker.timeInterval);
+    picker.countDownDuration = 60 * KSecondsInMinute;
+    XCTAssertEqual(60 * KSecondsInMinute, picker.countDownDuration);
     
-    picker.timeInterval = 62 * KSecondsInMinute;
-    XCTAssertEqual(62 * KSecondsInMinute, picker.timeInterval);
+    picker.countDownDuration = 62 * KSecondsInMinute;
+    XCTAssertEqual(62 * KSecondsInMinute, picker.countDownDuration);
 }
 
 - (void)testThatReturnedTimeIntervalIsRoundedToClosestMinuteOnLowSide {
     TimeIntervalPicker *picker = [[TimeIntervalPicker alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
     
-    picker.timeInterval = 2 * KSecondsInMinute + 1;
-    XCTAssertEqual(2 * KSecondsInMinute, picker.timeInterval);
+    picker.countDownDuration = 2 * KSecondsInMinute + 1;
+    XCTAssertEqual(2 * KSecondsInMinute, picker.countDownDuration);
 }
 
 - (void)testThatReturnedTimeIntervalIsReducedToTwentyFourHoursWhenGreater {
     TimeIntervalPicker *picker = [[TimeIntervalPicker alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
     
-    picker.timeInterval = 25 * KMinutesInHour * KSecondsInMinute + 10 * KSecondsInMinute;
-    XCTAssertEqual(1 * KMinutesInHour * KSecondsInMinute + 10 * KSecondsInMinute, picker.timeInterval);
+    picker.countDownDuration = 25 * KMinutesInHour * KSecondsInMinute + 10 * KSecondsInMinute;
+    XCTAssertEqual(1 * KMinutesInHour * KSecondsInMinute + 10 * KSecondsInMinute, picker.countDownDuration);
 }
 
 - (void)testInitialView {
@@ -56,19 +56,19 @@ const NSInteger KMinutesInHour = 60;
 
 - (void)testViewShowingTwoHours {
     TimeIntervalPicker *picker = [[TimeIntervalPicker alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
-    picker.timeInterval = 2 * KMinutesInHour * KSecondsInMinute;
+    picker.countDownDuration = 2 * KMinutesInHour * KSecondsInMinute;
     FBSnapshotVerifyView(picker, @"picker");
 }
 
 - (void)testViewShowingThirtySixMinutes {
     TimeIntervalPicker *picker = [[TimeIntervalPicker alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
-    picker.timeInterval = 36 * KSecondsInMinute;
+    picker.countDownDuration = 36 * KSecondsInMinute;
     FBSnapshotVerifyView(picker, @"picker");
 }
 
 - (void)testViewShowingMaximalValue {
     TimeIntervalPicker *picker = [[TimeIntervalPicker alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
-    picker.timeInterval = 23 * KMinutesInHour * KSecondsInMinute + 59 * KMinutesInHour;
+    picker.countDownDuration = 23 * KMinutesInHour * KSecondsInMinute + 59 * KMinutesInHour;
     FBSnapshotVerifyView(picker, @"picker");
 }
 
