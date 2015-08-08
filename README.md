@@ -12,6 +12,8 @@ DPTimeIntervalPicker closely resembles its look & fell, while providing customiz
 options for font faces and sizes. It also doesn't impose any limitations on the values, 
 allowing anything from zero to 23 hours 59 minutes to be selected.
 
+![TimeIntevalPicker](TimeIntervalPicker.png)
+
 **Compatibility:** iOS 8.0+ in all layout size classes
 
 **Language:** Swift (with Objective-C compatibility)
