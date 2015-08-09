@@ -11,21 +11,22 @@ internal class DigitsLabel: UIView {
     private let textAlignment = NSTextAlignment.Right
     private var label: UILabel!
     
-    internal init(width: CGFloat, height: CGFloat, labelWidth: CGFloat, font: UIFont) {
+    internal init(width: CGFloat, height: CGFloat, labelWidth: CGFloat, font: UIFont, textColor: UIColor) {
         super.init(frame: CGRect(x: 0, y: 0, width: width, height: height))
-        createLabel(width: labelWidth, height: height, font: font)
+        createLabel(width: labelWidth, height: height, font: font, textColor: textColor)
     }
     
     internal required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func createLabel(#width: CGFloat, height: CGFloat, font: UIFont) {
+    private func createLabel(#width: CGFloat, height: CGFloat, font: UIFont, textColor: UIColor) {
         label = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: height))
         addSubview(label)
         label.textAlignment = textAlignment
         label.adjustsFontSizeToFitWidth = false
         label.font = font
+        label.textColor = textColor
     }
     
 }
@@ -75,17 +76,36 @@ public class TimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerView
     // The defaults values aim to resemble the look of UIDataPicker
     
     /// Width of a picker component
-    public let componentWidth: CGFloat = 102
+    public var componentWidth: CGFloat = 102
     
     /// Size of a label that shows hours/minutes digits within a component
-    public let digitsLabelSize = CGSize(width: 26, height: 30)
+    public var digitsLabelSize = CGSize(width: 26, height: 30)
     
-    /// Font of a labels that show hours/minutes digits within a component
-    public let digitsLabelFont = UIFont.systemFontOfSize(23.5)
-
-    /// Font for "hours" and "min" labels
-    public let minHoursFloatingLabelFont = UIFont(name: "HelveticaNeue-Medium", size: 17) ??
-        UIFont.systemFontOfSize(17)
+    /// Font of labels that show hours/minutes digits within a component
+    public var digitsLabelFont = UIFont.systemFontOfSize(23.5) {
+        didSet { setNeedsDisplay() }
+    }
+    
+    /// Text color of labels that show hours/minutes digits within a component
+    public var digitsLabelTextColor = UIColor.blackColor() {
+        didSet { setNeedsDisplay() }
+    }
+    
+    /// Font of "hours" and "min" labels
+    public var minutesHoursLabelFont = UIFont.systemFontOfSize(17, weight: UIFontWeightMedium) {
+        didSet {
+            minutesFloatingLabel.font = minutesHoursLabelFont
+            hoursFloatingLabel.font = minutesHoursLabelFont
+        }
+    }
+    
+    /// Text color of "hours" and "min" labels
+    public var minutesHoursLabelTextColor = UIColor.blackColor() {
+        didSet {
+            minutesFloatingLabel.textColor = minutesHoursLabelTextColor
+            hoursFloatingLabel.textColor = minutesHoursLabelTextColor
+        }
+    }
     
     // MARK: Private details
     
@@ -180,7 +200,7 @@ public class TimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerView
     private func createFloatingLabels() {
         func createLabel(text: String) -> UILabel {
             var label = UILabel()
-            label.font = self.minHoursFloatingLabelFont
+            label.font = self.minutesHoursLabelFont
             label.text = text
             label.setTranslatesAutoresizingMaskIntoConstraints(false)
             label.userInteractionEnabled = false
@@ -246,9 +266,7 @@ public class TimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerView
     }
     
     public func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView!) -> UIView {
-        var x = DigitsLabel(width: componentWidth, height: digitsLabelSize.height, labelWidth: digitsLabelSize.width, font: digitsLabelFont)
-        
-        var label: DigitsLabel = view is DigitsLabel ? view as! DigitsLabel : DigitsLabel(width: componentWidth, height: digitsLabelSize.height, labelWidth: digitsLabelSize.width, font: digitsLabelFont)
+        var label: DigitsLabel = view is DigitsLabel ? view as! DigitsLabel : DigitsLabel(width: componentWidth, height: digitsLabelSize.height, labelWidth: digitsLabelSize.width, font: digitsLabelFont, textColor: digitsLabelTextColor)
         label.text = self.pickerView(pickerView, titleForRow: row, forComponent: component)
         return label
     }

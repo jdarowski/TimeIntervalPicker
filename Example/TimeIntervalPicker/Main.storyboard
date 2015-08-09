@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TimeInterval" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jI-j2-s3L">
-                                <rect key="frame" x="0.0" y="298" width="600" height="21"/>
+                                <rect key="frame" x="0.0" y="256" width="600" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="162" id="DMe-cP-8cW"/>
                                 </constraints>
@@ -32,21 +32,49 @@
                                 </variation>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TGu-sc-Qza" customClass="TimeIntervalPicker" customModule="TimeIntervalPicker">
-                                <rect key="frame" x="0.0" y="32" width="600" height="216"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="216"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="216" id="b8M-nU-CId"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dr8-nT-hpq" customClass="TimeIntervalPicker" customModule="TimeIntervalPicker">
+                                <rect key="frame" x="0.0" y="323" width="600" height="216"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="ruT-6x-pyw"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TimeInterval" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUf-rb-Pvn">
+                                <rect key="frame" x="0.0" y="559" width="600" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="DgH-4N-WbG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="DgH-4N-WbG"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="TGu-sc-Qza" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="32" id="91q-oZ-3ua"/>
+                            <constraint firstItem="dr8-nT-hpq" firstAttribute="top" relation="greaterThanOrEqual" secondItem="5jI-j2-s3L" secondAttribute="bottom" constant="20" id="0TX-MD-V9P"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="QUf-rb-Pvn" secondAttribute="bottom" constant="20" id="4E9-Xz-kcJ"/>
+                            <constraint firstItem="TGu-sc-Qza" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="20" id="91q-oZ-3ua"/>
+                            <constraint firstItem="QUf-rb-Pvn" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="CSl-Uc-nau"/>
                             <constraint firstItem="TGu-sc-Qza" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="FrU-yC-IgT"/>
                             <constraint firstAttribute="trailing" secondItem="5jI-j2-s3L" secondAttribute="trailing" id="H8y-sn-mfO"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="5jI-j2-s3L" secondAttribute="bottom" id="JJQ-DE-0B4"/>
-                            <constraint firstItem="5jI-j2-s3L" firstAttribute="top" secondItem="TGu-sc-Qza" secondAttribute="bottom" constant="50" id="KWZ-KW-V1i"/>
+                            <constraint firstItem="5jI-j2-s3L" firstAttribute="top" secondItem="TGu-sc-Qza" secondAttribute="bottom" constant="20" id="KWZ-KW-V1i"/>
+                            <constraint firstItem="QUf-rb-Pvn" firstAttribute="top" secondItem="dr8-nT-hpq" secondAttribute="bottom" constant="20" id="RoV-we-suP"/>
+                            <constraint firstItem="dr8-nT-hpq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="Tlb-pN-fr7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QUf-rb-Pvn" secondAttribute="trailing" constant="-16" id="aG2-Wi-Ezj"/>
                             <constraint firstAttribute="trailing" secondItem="TGu-sc-Qza" secondAttribute="trailing" id="hTB-Zc-nYJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dr8-nT-hpq" secondAttribute="trailing" constant="-16" id="tI4-K3-ABV"/>
                             <constraint firstItem="5jI-j2-s3L" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="wcJ-JP-JUD"/>
                         </constraints>
                         <variation key="default">
@@ -56,8 +84,10 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="picker" destination="TGu-sc-Qza" id="jtt-fa-3QB"/>
-                        <outlet property="valueLabel" destination="5jI-j2-s3L" id="4W5-Xp-kVr"/>
+                        <outlet property="customPicker" destination="dr8-nT-hpq" id="vaR-6f-2u5"/>
+                        <outlet property="customPickerValueLabel" destination="QUf-rb-Pvn" id="pQy-Bq-Zvq"/>
+                        <outlet property="defaultPicker" destination="TGu-sc-Qza" id="AOU-dn-LPU"/>
+                        <outlet property="defaultPickerValueLabel" destination="5jI-j2-s3L" id="x4L-0R-b3j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
