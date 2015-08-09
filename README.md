@@ -1,30 +1,20 @@
 # TimeIntervalPicker
+*UIDatePicker in CountDownTimer mode, implemented from scratch in Swift.*
 
 [![CI Status](http://img.shields.io/travis/dawiddr/TimeIntervalPicker.svg?style=flat)](https://travis-ci.org/dawiddr/TimeIntervalPicker)
 [![Version](https://img.shields.io/cocoapods/v/TimeIntervalPicker.svg?style=flat)](http://cocoadocs.org/docsets/TimeIntervalPicker)
 [![License](https://img.shields.io/cocoapods/l/TimeIntervalPicker.svg?style=flat)](http://cocoadocs.org/docsets/TimeIntervalPicker)
 [![Platform](https://img.shields.io/cocoapods/p/TimeIntervalPicker.svg?style=flat)](http://cocoadocs.org/docsets/TimeIntervalPicker)
 
-UIDatePicker in CountDownTimer mode is not customizable. Furthermore, as it is intended 
-to be used for countdown timers, it doesn't allow to select the value of 0.
+UIDatePicker is great, but doesn't fit everybody's needs. It's look is not customizable, functionality is limited to picking a count down time - have you noticed, that you can't select 0 hours, 0 minutes? That's because you're not supposed to count down from zero!
 
-DPTimeIntervalPicker closely resembles its look & fell, while providing customization 
-options for font faces and sizes. It also doesn't impose any limitations on the values, 
-allowing anything from zero to 23 hours 59 minutes to be selected.
+TimeIntervalPicker reimplementes UIDatePicker in CountDownTimer mode from scratch. By default it looks and feels exactly the same as the original, except you can easily change that by setting custom fonts. At the same time, the interface remains compatible with UIDatePicker, what means that in most cases you can use TimeIntervalPicker as a drop-in replacement. Oh, and it allows you to select 0 hours, 0 minutes.
 
 ![TimeIntevalPicker](TimeIntervalPicker.png)
 
-**Compatibility:** iOS 8.0+ in all layout size classes
-
-**Language:** Swift (with Objective-C compatibility)
-
-Some functionalities are not yet implemented - see Issues.
-
-## Usage
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
 ## Requirements
+
+iOS 8.0+, Xcode 6.4
 
 ## Installation
 
