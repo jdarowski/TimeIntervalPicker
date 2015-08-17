@@ -1,7 +1,7 @@
 # TimeIntervalPicker
 *UIDatePicker in CountDownTimer mode, implemented from scratch in Swift.*
 
-[![CI Status](http://img.shields.io/travis/dawiddr/TimeIntervalPicker.svg?style=flat)](https://travis-ci.org/dawiddr/TimeIntervalPicker)
+[![CI Status](http://img.shields.io/travis/dawiddr/TimeIntervalPicker/master.svg?style=flat)](https://travis-ci.org/dawiddr/TimeIntervalPicker)
 [![Version](https://img.shields.io/cocoapods/v/TimeIntervalPicker.svg?style=flat)](http://cocoadocs.org/docsets/TimeIntervalPicker)
 [![License](https://img.shields.io/cocoapods/l/TimeIntervalPicker.svg?style=flat)](http://cocoadocs.org/docsets/TimeIntervalPicker)
 [![Platform](https://img.shields.io/cocoapods/p/TimeIntervalPicker.svg?style=flat)](http://cocoadocs.org/docsets/TimeIntervalPicker)
