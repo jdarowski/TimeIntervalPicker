@@ -13,14 +13,14 @@ internal class DigitsLabel: UIView {
     
     internal init(width: CGFloat, height: CGFloat, labelWidth: CGFloat, font: UIFont, textColor: UIColor) {
         super.init(frame: CGRect(x: 0, y: 0, width: width, height: height))
-        createLabel(width: labelWidth, height: height, font: font, textColor: textColor)
+        createLabel(labelWidth, height: height, font: font, textColor: textColor)
     }
     
     internal required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func createLabel(#width: CGFloat, height: CGFloat, font: UIFont, textColor: UIColor) {
+    private func createLabel(width: CGFloat, height: CGFloat, font: UIFont, textColor: UIColor) {
         label = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: height))
         addSubview(label)
         label.textAlignment = textAlignment
@@ -31,6 +31,7 @@ internal class DigitsLabel: UIView {
     
 }
 
+@available(iOS 8.2, *)
 public class TimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerViewDelegate {
     
     // MARK: Value access
@@ -58,7 +59,7 @@ public class TimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerView
             return NSCalendar.currentCalendar().dateFromComponents(components)!
         }
         set(newDate) {
-            let components = NSCalendar.currentCalendar().components(.CalendarUnitHour | .CalendarUnitMinute | .CalendarUnitSecond, fromDate: newDate)
+            let components = NSCalendar.currentCalendar().components([.Hour, .Minute, .Second], fromDate: newDate)
             countDownDuration = NSTimeInterval(components.hour * 3600 + components.minute * 60 + components.second)
         }
     }
@@ -128,7 +129,7 @@ public class TimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerView
         
         createPickerView()
         createFloatingLabels()
-        autoresizingMask = .FlexibleHeight | .FlexibleWidth
+        autoresizingMask = [.FlexibleHeight, .FlexibleWidth]
         
         // Creates an illusion of an infinitly-looped minute: selector
         let middleMinutesRow = minuteRowsCount / 2
@@ -136,11 +137,11 @@ public class TimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerView
     }
     
     required public init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        super.init(coder: aDecoder)!
         
         createPickerView()
         createFloatingLabels()
-        autoresizingMask = .FlexibleHeight | .FlexibleWidth
+        autoresizingMask = [.FlexibleHeight, .FlexibleWidth]
         
         // Creates an illusion of an infinitly-looped minute: selector
         let middleMinutesRow = minuteRowsCount / 2
@@ -151,7 +152,7 @@ public class TimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerView
         pickerView = UIPickerView()
         pickerView.delegate = self
         pickerView.dataSource = self
-        pickerView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        pickerView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(pickerView)
         
         // Fill the whole container:
@@ -202,7 +203,7 @@ public class TimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerView
             var label = UILabel()
             label.font = self.minutesHoursLabelFont
             label.text = text
-            label.setTranslatesAutoresizingMaskIntoConstraints(false)
+            label.translatesAutoresizingMaskIntoConstraints = false
             label.userInteractionEnabled = false
             label.adjustsFontSizeToFitWidth = false
             label.sizeToFit()
